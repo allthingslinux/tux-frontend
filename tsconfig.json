@@ -1,18 +1,24 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6", // upgrade to es6 from es5
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "allowJs": true, // add => Allows JavaScript files to be compiled
+    "allowUnreachableCode": false, // add => raises compiler errors about unreachable code
+    "allowUnusedLabels": false, // add =>  raises compiler errors about unused labels
+    "noFallthroughCasesInSwitch": true, // add => Ensures that any non-empty case inside a switch statement includes either break or return
+    "noImplicitReturns": true, // add => Check all code paths in a function to ensure they return a value.
+    "sourceMap": true, // add => Enables the generation of sourcemap files. Easier to debug
+    "skipLibCheck": true, // add => Skip type checking of declaration files. Faster compilation
+    "forceConsistentCasingInFileNames": true, // add => Ensures that casing is correct in imports
+    "strict": true, // turn to true => Enables a wide range of type checking behavior
+    "noEmit": true, // turn to true => Does not emit output files
+    "esModuleInterop": true, // turn to true => Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. This is a necessary step to enable tree shaking when bundling with rollup
+    "module": "esnext", // turn to esnext => Specify module code generation
+    "moduleResolution": "Bundler", // add => Specify module resolution strategy
+    "resolveJsonModule": true, // add => Include modules imported with .json extension
+    "isolatedModules": true, // add => Ensure that each file can be safely transpiled without relying on other imports
+    "jsx": "preserve", // add => Specify JSX code generation
+    "incremental": true, // add => Enable incremental compilation
     "plugins": [
       {
         "name": "next"
@@ -22,6 +28,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "jest.setup.js"],
   "exclude": ["node_modules"]
 }
